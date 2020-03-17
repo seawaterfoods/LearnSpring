@@ -1,5 +1,6 @@
 package com.joe.springbootlearnbegan.web;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -24,6 +25,17 @@ import java.util.Map;
 @RequestMapping("/v1")
 public class HelloController {
 
+
+    @Value("${book.name}")
+    private String name;
+
+    @Value("${book.author}")
+    private String author;
+
+    @Value("${book.isbn}")
+    private String isbn;
+
+
     // @RequestMapping("/say",method = RequestMethod.GET)是等同於@GetMapping("say")
     @GetMapping("say")
     public String hello() {
@@ -36,11 +48,12 @@ public class HelloController {
     @GetMapping("books")
 //    @ResponseBody//可將返回值強制設為非thymeleaf資料(像是jason格式,String)
     public Object getAll(@RequestParam("page") int page,@RequestParam(value = "size",defaultValue = "10") int size) {
-        Map<String,Object> book1 = new HashMap<String, Object>();
-        book1.put("name", "哲學哲學雞蛋糕");
-        book1.put("isbn", "1234567890123");
-        book1.put("author", "哲糕");
-        Map<String,Object> book2 = new HashMap<String, Object>();
+        Map<String,Object> book1 = new HashMap<>();
+        book1.put("name", name);
+        book1.put("isbn", isbn);
+        book1.put("author", author);
+
+        Map<String,Object> book2 = new HashMap<>();
         book2.put("name", "上班如何摸魚");
         book2.put("isbn", "1314151617182");
         book2.put("author", "狗才摸魚");
@@ -48,11 +61,11 @@ public class HelloController {
         contents.add(book1);
         contents.add(book2);
 
-        Map<String, Object> pageamp = new HashMap<>();
-        pageamp.put("page", page);
-        pageamp.put("size", size);
-        pageamp.put("content",contents);
-        return pageamp;
+        Map<String, Object> pagemap = new HashMap<>();
+        pagemap.put("page", page);
+        pagemap.put("size", size);
+        pagemap.put("content",contents);
+        return pagemap;
     }
 
     /*
@@ -71,9 +84,9 @@ public class HelloController {
     public Object getOne(@PathVariable long id, @PathVariable String username) {
         System.out.println("---id:" + id + "username: "+username);
         Map<String, Object> book = new HashMap<>();
-        book.put("name", "哲學哲學雞蛋糕");
-        book.put("isbn", "1234567890123");
-        book.put("author", "哲糕");
+        book.put("name", name);
+        book.put("isbn", isbn);
+        book.put("author", author);
         book.put("username",username);
 
         return book;
@@ -87,10 +100,11 @@ public class HelloController {
     public Object post(@RequestParam("name") String name,
                        @RequestParam("author")String author,
                        @RequestParam("isbn") String isbn){
-        Map<String,Object> books = new HashMap<String, Object>();
+        Map<String,Object> books = new HashMap<>();
         books.put("name",name);
         books.put("author",author);
-        books.put("isbn",isbn);
+        books.put("isbn", isbn);
+
 
         return books;
     }

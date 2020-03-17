@@ -21,7 +21,7 @@ import java.util.Map;
 
 //@Controller
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/v1")
 public class HelloController {
 
     // @RequestMapping("/say",method = RequestMethod.GET)是等同於@GetMapping("say")
@@ -43,7 +43,7 @@ public class HelloController {
         Map<String,Object> book2 = new HashMap<String, Object>();
         book2.put("name", "上班如何摸魚");
         book2.put("isbn", "1314151617182");
-        book2.put("author", "狗才摸");
+        book2.put("author", "狗才摸魚");
         List<Map> contents = new ArrayList<>();
         contents.add(book1);
         contents.add(book2);

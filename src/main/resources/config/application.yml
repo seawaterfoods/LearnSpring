@@ -1,0 +1,8 @@
+#另一種配置文件方式
+server:
+  port: 8080
+logging:
+  level:
+    root: warn
+    com.joe: debug
+  file:log/my.log

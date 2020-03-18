@@ -1,5 +1,7 @@
 package com.joe.springbootlearnbegan.web;
 
+import com.joe.springbootlearnbegan.domain.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +37,8 @@ public class HelloController {
     @Value("${book.isbn}")
     private String isbn;
 
+    @Autowired
+    private Book book;
 
     // @RequestMapping("/say",method = RequestMethod.GET)是等同於@GetMapping("say")
     @GetMapping("say")
@@ -83,11 +87,7 @@ public class HelloController {
     @GetMapping("/books/{id}/{username:[a-z_]}")
     public Object getOne(@PathVariable long id, @PathVariable String username) {
         System.out.println("---id:" + id + "username: "+username);
-        Map<String, Object> book = new HashMap<>();
-        book.put("name", name);
-        book.put("isbn", isbn);
-        book.put("author", author);
-        book.put("username",username);
+
 
         return book;
     }

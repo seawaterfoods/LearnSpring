@@ -1,0 +1,9 @@
+#另一種配置文件方式
+server:
+  port: 8081
+logging:
+  level:
+    root: warn
+    com.joe: info
+
+

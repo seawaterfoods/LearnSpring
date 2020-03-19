@@ -37,8 +37,8 @@ public class HelloController {
     @Value("${book.isbn}")
     private String isbn;
 
-    @Autowired
-    private Book book;
+//    @Autowired
+//    private Book book;
 
     // @RequestMapping("/say",method = RequestMethod.GET)是等同於@GetMapping("say")
     @GetMapping("say")
@@ -89,7 +89,7 @@ public class HelloController {
         System.out.println("---id:" + id + "username: "+username);
 
 
-        return book;
+        return null;
     }
 
     /*

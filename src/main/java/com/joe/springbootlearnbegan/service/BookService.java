@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -78,7 +79,9 @@ public class BookService {
 
     /*
     * 以自定義語法去查詢
+    * @Transactional將其納入事務管理
     * */
+//    @Transactional
     public List<Book> findByJPQL(int len){
         return bookRepository.findByJPQL(len);
     }

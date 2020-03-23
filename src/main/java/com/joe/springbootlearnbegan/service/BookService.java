@@ -85,4 +85,19 @@ public class BookService {
     public List<Book> findByJPQL(int len){
         return bookRepository.findByJPQL(len);
     }
+
+    /*
+    * 測試事務操作方法
+    *
+    * */
+    @Transactional
+    public int deleteAndUpdata(long id,int status,long uid){
+
+        int dcount = bookRepository.deleteByJPQL(id);
+
+        int udcont = bookRepository.updataByJPQL(status,uid);
+
+        return dcount+udcont;
+
+    }
 }

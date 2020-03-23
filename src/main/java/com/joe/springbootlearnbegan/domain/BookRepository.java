@@ -35,6 +35,9 @@ public interface BookRepository extends JpaRepository<Book,Long> {
     /*
     * 自定義更新
     * @Transactional將其納入事務管理
+    * Transactional(timeout=-1默認無超時設定，單位是秒)
+    * Transactional(readOnly設為只讀)
+    *
     * */
     @Transactional
     @Modifying

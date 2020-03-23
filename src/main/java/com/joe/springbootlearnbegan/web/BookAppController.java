@@ -98,6 +98,12 @@ public class BookAppController {
         return bookService.findByAuthor(author);
     }
 
+    @PostMapping("/books/by")
+    public int findBy(@RequestParam long id,@RequestParam int status,@RequestParam long uid){
+
+    return bookService.deleteAndUpdata(id,status,uid);
+    }
+
 
 
 }

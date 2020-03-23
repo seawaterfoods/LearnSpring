@@ -4,6 +4,8 @@
 spring:
   profiles:
     active: dev
+  thymeleaf:
+    mode: HTML
 
 
 #spring-boot也可以自訂注入的資料

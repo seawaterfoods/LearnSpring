@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>書單詳情</title>
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}" href="../static/css/bootstrap-theme.min.css">
 </head>
-<body th:object="${book}">
-    <div>
+<body th:object="${book}" style="max-width: 700px;">
+<div class="container">
+    <h2 class="page-header" style="margin-top: 50px">詳情</h2>
+    <div class="well">
         <p>
             <strong>書名：</strong><span th:test="${book.name}"></span>
         </p>
@@ -19,6 +25,10 @@
             <strong>狀態：</strong><span th:test="*{status}"></span>
         </p>
     </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
 
 </body>
 </html>

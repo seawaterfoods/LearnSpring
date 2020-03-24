@@ -21,9 +21,19 @@
         <p>
             <strong>說明：</strong><span th:test="*{description}"></span>
         </p>
-        <p>
-            <strong>狀態：</strong><span th:test="*{status}"></span>
+        <p th:switch="*{status}">
+            <strong>狀態：</strong>
+                <span th:case="0">想讀</span>
+                <span th:case="1">在讀</span>
+                <span th:case="2">已讀</span>
         </p>
+    </div>
+
+    <div class="alert alert-success" th:unless="*{status == 0}">
+        <strong>不錯</strong>，你已經開始行動
+    </div>
+    <div class="alert alert-warning" th:if="*{status == 0}">
+        <strong>注意</strong>，你還沒開始行動
     </div>
 </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @Controller
 public class BookController {
 
@@ -15,7 +17,10 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping("/books")
-    public String list(){
+    public String list(Model model)
+    {
+        List<Book> books =bookService.findAll();
+        model.addAttribute("books",books);
         return "books";
     }
 

@@ -71,33 +71,33 @@ public class BookService {
     }
 
     /*
-    * 以描述結尾字元作為查詢書單
-    * */
-    public List<Book> findByDescriptionEndWith(String des){
+     * 以描述結尾字元作為查詢書單
+     * */
+    public List<Book> findByDescriptionEndWith(String des) {
         return bookRepository.findByDescriptionEndsWith(des);
     }
 
     /*
-    * 以自定義語法去查詢
-    * @Transactional將其納入事務管理
-    * */
+     * 以自定義語法去查詢
+     * @Transactional將其納入事務管理
+     * */
 //    @Transactional
-    public List<Book> findByJPQL(int len){
+    public List<Book> findByJPQL(int len) {
         return bookRepository.findByJPQL(len);
     }
 
     /*
-    * 測試事務操作方法
-    *
-    * */
+     * 測試事務操作方法
+     *
+     * */
     @Transactional
-    public int deleteAndUpdata(long id,int status,long uid){
+    public int deleteAndUpdata(long id, int status, long uid) {
 
         int dcount = bookRepository.deleteByJPQL(id);
 
-        int udcont = bookRepository.updataByJPQL(status,uid);
+        int udcont = bookRepository.updataByJPQL(status, uid);
 
-        return dcount+udcont;
+        return dcount + udcont;
 
     }
 }

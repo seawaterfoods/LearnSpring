@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>書單</title>
-    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}" href="../static/css/bootstrap-theme.min.css">
@@ -12,15 +12,16 @@
 
 <div class="container">
     <h2 class="page-header">書單列表</h2>
-    <table class="table table-bordered">
+    <p><a th:href="@{/books/input}" href="./input.html" class="btn btn-primary">新增</a></p>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
-            <tr>
-                <th>#</th>
-                <th>書名</th>
-                <th>作者</th>
-                <th>說明</th>
-                <th>狀態</th>
-            </tr>
+        <tr>
+            <th>#</th>
+            <th>書名</th>
+            <th>作者</th>
+            <th>說明</th>
+            <th>狀態</th>
+        </tr>
         </thead>
         <!--
             iterStat:
@@ -32,24 +33,24 @@
 
         -->
         <tbody>
-            <tr th:each="book,iterStat:${books}" th:class="${iterStat.even}? 'bg-success'">
-                <td th:text="${iterStat.count}">1</td>
-<!--                <td><a th:href="@{/book/{id}(id=${book.id}})}" th:text="${book.name}">書名</a></td>-->
-                <td><a th:href="@{'/book/'+${book.id}}" th:text="${book.name}">書名</a></td>
-                <td th:text="${book.author}">作者</td>
-                <td th:text="${book.description}">說明</td>
-                <td th:switch="${book.status}">
-                    <span th:case="0">想讀</span>
-                    <span th:case="1">在讀</span>
-                    <span th:case="2">已讀</span>
-                </td>
-            </tr>
+        <tr th:each="book,iterStat:${books}" th:class="${iterStat.even}? 'bg-success'">
+            <td th:text="${iterStat.count}">1</td>
+            <!--                <td><a th:href="@{/book/{id}(id=${book.id}})}" th:text="${book.name}">書名</a></td>-->
+            <td><a th:href="@{'/books/'+${book.id}}" th:text="${book.name}">書名</a></td>
+            <td th:text="${book.author}">作者</td>
+            <td th:text="${book.description}">說明</td>
+            <td th:switch="${book.status}">
+                <span th:case="0">想讀</span>
+                <span th:case="1">在讀</span>
+                <span th:case="2">已讀</span>
+            </td>
+        </tr>
         </tbody>
     </table>
 
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
 </body>
 </html>

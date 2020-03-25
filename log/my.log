@@ -1467,3 +1467,29 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2020-03-25 14:45:27.601  INFO 2556 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-03-25 14:45:27.602  INFO 2556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-03-25 14:45:27.611  INFO 2556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-03-25 16:08:46.546  INFO 8584 --- [main] c.j.s.SpringBootLearnBeganApplication    : Starting SpringBootLearnBeganApplication on 19008491Joe with PID 8584 (D:\LearnSpring\target\classes started by Systex in D:\LearnSpring)
+2020-03-25 16:08:46.561 DEBUG 8584 --- [main] c.j.s.SpringBootLearnBeganApplication    : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 16:08:46.562  INFO 8584 --- [main] c.j.s.SpringBootLearnBeganApplication    : The following profiles are active: dev
+2020-03-25 16:08:48.738  INFO 8584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-25 16:08:48.891  INFO 8584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133ms. Found 1 JPA repository interfaces.
+2020-03-25 16:08:50.501  INFO 8584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-25 16:08:50.536  INFO 8584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-25 16:08:50.537  INFO 8584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-25 16:08:51.164  INFO 8584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-03-25 16:08:51.165  INFO 8584 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4516 ms
+2020-03-25 16:08:52.039  INFO 8584 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-25 16:08:52.370  INFO 8584 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-25 16:08:52.920  INFO 8584 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-25 16:08:53.356  INFO 8584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-25 16:08:53.358  WARN 8584 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-03-25 16:08:53.692  INFO 8584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-25 16:08:53.728  INFO 8584 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-03-25 16:08:55.138  INFO 8584 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-25 16:08:55.152  INFO 8584 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-25 16:08:56.449  WARN 8584 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-25 16:08:56.707  INFO 8584 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-25 16:08:57.249  INFO 8584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-03-25 16:08:57.251  INFO 8584 --- [main] c.j.s.SpringBootLearnBeganApplication    : Started SpringBootLearnBeganApplication in 12.927 seconds (JVM running for 20.596)
+2020-03-25 16:09:02.664  INFO 8584 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-25 16:09:02.664  INFO 8584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-25 16:09:02.733  INFO 8584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 69 ms

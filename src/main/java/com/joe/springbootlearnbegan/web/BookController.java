@@ -36,7 +36,9 @@ public class BookController {
 * 跳轉提交頁面
 * */
     @GetMapping("/books/input")
-    public String inputPage(){
+    public String inputPage(Model model)
+    {
+        model.addAttribute("book",new Book());
         return "input";
     }
 
@@ -49,5 +51,16 @@ public class BookController {
     public String post(Book book){
         bookService.save(book);
         return "redirect:/books";
+    }
+
+
+    /*
+    * 跳轉到更新頁面
+    * */
+    @GetMapping("/books/{id}/input")
+    public String inputEditPage(@PathVariable long id, Model model){
+        Book book=bookService.findOne(id);
+        model.addAttribute("book",book);
+        return "input";
     }
 }

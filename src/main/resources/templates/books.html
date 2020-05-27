@@ -53,7 +53,8 @@
                 <span th:case="*">狀態</span>
             </td>
             <td>
-                <a th:href="@{/books/{id}/input(id=${book.id})}">更新</a>
+                <a th:href="@{/books/{id}/input(id=${book.id})}">更新</a>&nbsp;
+                <a th:href="@{/books/{id}/delete(id=${book.id})}">刪除</a>
             </td>
         </tr>
         </tbody>

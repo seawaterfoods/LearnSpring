@@ -80,4 +80,10 @@ public class BookController {
     * model只能在一個請求使用
     *
     * */
+    @GetMapping("/books/{id}/delete")
+    public String delete(@PathVariable long id,final RedirectAttributes attributes){
+        bookService.deleteOne(id);
+        attributes.addFlashAttribute("message","刪除成功");
+        return "redirect:/books";
+    }
 }

@@ -3,6 +3,10 @@ package com.joe.springbootlearnbegan.service;
 import com.joe.springbootlearnbegan.domain.Book;
 import com.joe.springbootlearnbegan.domain.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +29,14 @@ public class BookService {
         return bookRepository.findAll();
     }
 
+
+    /*
+    * 分頁查詢書單列表
+    *
+    * */
+    public Page<Book> findAllByPage(Pageable pageable){
+        return bookRepository.findAll(pageable);
+    }
 
     /*
      * 提交一個書單
@@ -100,4 +112,5 @@ public class BookService {
         return dcount + udcont;
 
     }
+
 }

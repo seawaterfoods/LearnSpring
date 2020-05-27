@@ -12,7 +12,11 @@
 
 <div class="container">
     <h2 class="page-header">書單列表</h2>
-
+    <div class="alert alert-success alert-dismissable fade in"th:unless="${#strings.isEmpty(message)}">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>恭喜, </strong>
+        <span th:text="${message}">信息提交成功！</span>
+    </div>
 
     <p><a th:href="@{/books/input}" href="./input.html" class="btn btn-primary">新增</a></p>
     <table class="table table-bordered table-striped table-hover">
@@ -36,7 +40,7 @@
 
         -->
         <tbody>
-        <tr th:each="book,iterStat:${books}" th:class="${iterStat.even}? 'bg-success'">
+        <tr th:each="book,iterStat:${page.content}" th:class="${iterStat.even}? 'bg-success'">
             <td th:text="${iterStat.count}">1</td>
             <!--                <td><a th:href="@{/book/{id}(id=${book.id}})}" th:text="${book.name}">書名</a></td>-->
             <td><a th:href="@{'/books/'+${book.id}}" th:text="${book.name}">書名</a></td>
@@ -46,6 +50,7 @@
                 <span th:case="0">想讀</span>
                 <span th:case="1">在讀</span>
                 <span th:case="2">已讀</span>
+                <span th:case="*">狀態</span>
             </td>
             <td>
                 <a th:href="@{/books/{id}/input(id=${book.id})}">更新</a>
@@ -53,7 +58,13 @@
         </tr>
         </tbody>
     </table>
+    <nav>
+            <ul class="pager">
+                <li class="previous"><a href="#" th:href="@{'/books?page='+${page.number-1}}" th:unless="${page.first}">上一頁</a></li>
+                <li class="next"><a href="#" th:href="@{/books(page=${page.number}+1)}" th:unless="${page.last}">下一頁</a></li>
+            </ul>
 
+    </nav>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -3,6 +3,9 @@ package com.joe.springbootlearnbegan.web;
 import com.joe.springbootlearnbegan.domain.Book;
 import com.joe.springbootlearnbegan.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,15 +20,16 @@ public class BookAppController {
 
     @Autowired
     private BookService bookService;
-//
-//
+
+
 //    /*
 //     * 查詢所有書單列表
 //     * */
 //    @GetMapping("/books")
-//    public List<Book> getAll() {
+//    public Page<Book> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
 //
-//        return bookService.findAll();
+//        Sort sort = new Sort(Sort.Direction.DESC,"id");
+//        return bookService.findAllByPage(new PageRequest(page,size,sort));
 //
 //    }
 //

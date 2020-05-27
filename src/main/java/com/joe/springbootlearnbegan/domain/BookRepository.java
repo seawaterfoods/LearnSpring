@@ -1,5 +1,7 @@
 package com.joe.springbootlearnbegan.domain;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -52,4 +54,10 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Modifying
     @Query("delete from Book b where b.id= ?1")
     int deleteByJPQL(long id);
+
+    /*
+    * 自定義分頁查詢語句
+    * JPA分頁:Pageable
+    * */
+    Page<Book> findAll(Pageable pageable);
 }

@@ -1,4 +1,4 @@
-package com.joe.springbootlearnbegan.domain;
+package com.joe.restservice.domain;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

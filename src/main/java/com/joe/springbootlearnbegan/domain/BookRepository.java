@@ -1,10 +1,11 @@
-package com.joe.restservice.domain;
+package com.joe.springbootlearnbegan.domain;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * 這可以新增SQL查詢語句，
  * 是用特定命名方法名的方式去自動拼裝SQL語法
  * */
+@Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     List<Book> findByAuthor(String author);

@@ -1,11 +1,10 @@
 package com.joe.designpattern.observerpattern;
 
-import java.util.ArrayList;
 import java.util.Observable;
-import java.util.Observer;
 
 public class WeatherData extends Observable {
 
+//    private ArrayList observers;
     private float temperature;
     private float humidity;
     private float pressure;

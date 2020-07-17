@@ -29,7 +29,7 @@ public class CurrentConditionsDisplay implements Observer,DisplayElement {
     }
 
     public void display() {
-        System.out.println("當前天氣狀況，目前溫度: 攝氏"+temperature+"度 與 濕度:"+humidity+"%\n");
+        System.out.println("當前天氣狀況，目前溫度: 華氏"+temperature+"度 與 濕度:"+humidity+"%\n");
     }
 
 

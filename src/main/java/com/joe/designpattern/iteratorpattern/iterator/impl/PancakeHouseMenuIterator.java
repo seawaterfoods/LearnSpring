@@ -1,9 +1,9 @@
 package com.joe.designpattern.iteratorpattern.iterator.impl;
 
 import com.joe.designpattern.iteratorpattern.item.MenuItem;
-import com.joe.designpattern.iteratorpattern.iterator.Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PancakeHouseMenuIterator implements Iterator {
 
@@ -27,6 +27,19 @@ public class PancakeHouseMenuIterator implements Iterator {
             return false;
         }else {
             return true;
+        }
+    }
+
+    @Override
+    public void remove() {
+        if (position <= 0) {
+            throw new IllegalStateException("你沒辦法再刪除了!");
+        }
+        if (items.size()-1 !=0){
+            for (int i = position-1; i <(items.size()-1);i++){
+                items.set(i,items.get(i+1));
+            }
+            items.set(items.size()-1,null);
         }
     }
 }

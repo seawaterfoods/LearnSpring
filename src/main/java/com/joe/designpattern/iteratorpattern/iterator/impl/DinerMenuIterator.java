@@ -30,6 +30,7 @@ public class DinerMenuIterator implements Iterator {
         return menuItem;
     }
 
+    @Override
     public void remove(){
         if (position<=0){
             throw new IllegalStateException("你沒辦法再刪除了!");
